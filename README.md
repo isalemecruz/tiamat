@@ -53,7 +53,7 @@ Cada algoritmo é um <code>Pipeline</code> com normalização (quando necessári
         <strong>README.md:</strong> descrição geral, metodologia, resultados e conclusões do projeto.
     </li>
     <li>
-        <strong>NOME_DO_NOTEBOOK.ipynb:</strong> notebook contendo toda a análise, desde o carregamento e a exploração dos dados até a otimização, a escolha do modelo final, a avaliação no teste e a explicação do modelo, com textos explicativos ao longo do código.
+        <strong>tiamat.ipynb:</strong> notebook contendo toda a análise, desde o carregamento e a exploração dos dados até a otimização, a escolha do modelo final, a avaliação no teste e a explicação do modelo, com textos explicativos ao longo do código.
     </li>
     <li>
         <strong>fetal_health.csv:</strong> conjunto de dados, baixado manualmente do Kaggle e armazenado na mesma pasta do notebook.
@@ -409,12 +409,11 @@ De forma geral, o trabalho mostrou que, em um problema desbalanceado e com atrib
 
 <h3>🤖 Descrição do uso de Inteligência Artificial</h3>
 
-<p align="justify"> Durante o desenvolvimento do projeto, utilizei o <strong>Claude</strong> como apoio em [descreva as etapas: por exemplo, revisão do notebook, explicação dos hiperparâmetros, matrizes de confusão, formatação das referências]. As sugestões da ferramenta foram analisadas e adaptadas por mim, sendo os códigos executados, os experimentos realizados e os resultados analisados por mim. </p>
+<p align="justify">Durante o desenvolvimento do projeto, utilizei o <strong>Claude</strong> como apoio no planejamento das etapas, na definição do target e na correção de códigos. A ferramenta também auxiliou na interpretação dos resultados, na revisão das conclusões  </p>
 
-<p align="justify"> [Se usou outra ferramenta, como o ChatGPT, descreva aqui o uso em um parágrafo próprio.] </p>
 
-<p align="justify"> <a href="LINK_DO_REGISTRO_DA_CONVERSA">Registro da conversa</a> </p>
-
+<p align="justify"> <a href="https://claude.ai/share/e2bd3054-b8d4-47ae-ba12-7d4e2bd3a5cf</p>">Registro da conversa</a> </p>
+<h3> Descrição do uso de Inteligência Artificial</h3>
 ---
 
 <h2>🚀 Melhorias futuras</h2>
