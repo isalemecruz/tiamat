@@ -59,7 +59,7 @@ Cada algoritmo é um <code>Pipeline</code> com normalização (quando necessári
         <strong>fetal_health.csv:</strong> conjunto de dados, baixado manualmente do Kaggle e armazenado na mesma pasta do notebook.
     </li>
     <li>
-        <strong>tiamat_&lt;algoritmo&gt;.db:</strong> arquivos SQLite gerados pelo Optuna, que guardam as tentativas de cada otimização para que a busca possa ser retomada sem repetir o trabalho.
+        <strong>Arquivos <code>.db</code> do Optuna</strong> (<code>tiamat_regressao_logistica.db</code>, <code>tiamat_knn.db</code>, <code>tiamat_svm.db</code>, <code>tiamat_floresta_aleatoria.db</code> e <code>tiamat_gradient_boosting.db</code>): bancos SQLite que guardam as 100 tentativas de cada otimização, para que a busca seja retomada sem repetir o trabalho. Eles precisam estar na mesma pasta do notebook.
     </li>
 </ul>
 
@@ -329,16 +329,29 @@ pip install pandas numpy matplotlib seaborn scikit-learn optuna
 git clone https://github.com/isalemecruz/NOME_DO_REPOSITORIO.git
 ```
 
-<h3>3. Conjunto de dados</h3>
+<h3>3. Conjunto de dados e estudos do Optuna</h3>
 
 <p align="justify">
-Baixe o arquivo <code>fetal_health.csv</code> em <a href="https://www.kaggle.com/datasets/andrewmvd/fetal-health-classification">kaggle.com/datasets/andrewmvd/fetal-health-classification</a> e coloque-o na mesma pasta do notebook. O download é manual, o que evita a necessidade de autenticação no Kaggle.
+Para executar o notebook, a pasta deve conter os seguintes arquivos:
+</p>
+
+<ul>
+    <li>
+        <code>fetal_health.csv</code>: baixe em <a href="https://www.kaggle.com/datasets/andrewmvd/fetal-health-classification">kaggle.com/datasets/andrewmvd/fetal-health-classification</a>. O download é manual, o que evita a necessidade de autenticação no Kaggle;
+    </li>
+    <li>
+        os cinco arquivos <code>tiamat_*.db</code>, que já estão no repositório e guardam os resultados da otimização do Optuna.
+    </li>
+</ul>
+
+<p align="justify">
+Os arquivos <code>.db</code> devem ficar na mesma pasta do notebook. Sem eles, o Optuna cria estudos novos e refaz as 100 tentativas de cada algoritmo, o que pode demorar bastante e gerar resultados um pouco diferentes dos apresentados neste README.
 </p>
 
 <h3>4. Execução</h3>
 
 <p align="justify">
-Abra o notebook em um ambiente compatível com Jupyter Notebook ou JupyterLab e execute as células sequencialmente. A otimização do Optuna (100 tentativas por algoritmo) pode demorar, principalmente para o Gradient Boosting. Como os estudos são salvos em arquivos <code>.db</code>, ao executar novamente o notebook só são feitas as tentativas que faltam.
+Abra o notebook em um ambiente compatível com Jupyter Notebook ou JupyterLab e execute as células sequencialmente. Com os arquivos <code>.db</code> presentes, o Optuna recarrega os estudos e só executa as tentativas que faltam para completar 100, então a otimização termina rapidamente. Os demais passos (reavaliação, matrizes de confusão e avaliação no teste) são refeitos a partir dos melhores hiperparâmetros salvos.
 </p>
 
 ---
